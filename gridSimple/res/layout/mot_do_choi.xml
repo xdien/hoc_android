@@ -4,6 +4,7 @@
     android:layout_height="148dp"
     android:background="@drawable/border"
     android:padding="8dp"
+    android:descendantFocusability="blocksDescendants"
     android:orientation="vertical" >
 
     <ImageView
@@ -19,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginLeft="22dp"
+        android:layout_marginLeft="8dp"
         android:text="ten" />
 
     <LinearLayout
