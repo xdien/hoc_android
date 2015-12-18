@@ -47,3 +47,4 @@ signing.properties
 Git/
 *.exe
 .metadata/
+.settings/
