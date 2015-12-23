@@ -13,23 +13,28 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 	Button btnChiaBai;
+	ImageView img;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		btnChiaBai = (Button) findViewById(R.id.button1);
+		img = (ImageView) findViewById(R.id.imageView1);
 		btnChiaBai.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				chiaBai();
 			}
 		});
+		
+		
+		
 	}
 
 	@Override
@@ -51,16 +56,18 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	public void chiaBai(){
-		Log.w("click dc", "ok");
 		//lay do phan giai man hinh
 		Display display = getWindowManager().getDefaultDisplay();
-		Point diem;
+		Point diem = new Point();
 		display.getSize(diem);
 		int x= diem.x/2;
 		int y = diem.y/2;
 		//Tao hieu ung chuyen dong tu duoi len tren
-		
-		TranslateAnimation duoilen = new TranslateAnimation(diem.x/2, diem);
-		duoilen.set
+		TranslateAnimation duoilen = new TranslateAnimation(x, x, diem.y, 0);
+		duoilen.setDuration(1000);
+		img.setAnimation(duoilen);
+		duoilen.start();
 	}
+	
+	
 }
