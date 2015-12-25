@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="ctaSize"
+        android:summary="Cai dat co chu"
+        android:title="Co chu" >
+        <CheckBoxPreference
+            android:key="sizeBu"
+            android:title="Co chu" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="ctaMau"
+        android:title="Mau sac" >
+        <ListPreference
+            android:entries="@array/color"
+            android:entryValues="@array/colorvalue" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
