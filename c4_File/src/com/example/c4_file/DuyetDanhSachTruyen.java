@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -28,6 +29,15 @@ public class DuyetDanhSachTruyen extends Activity {
 		ArrayAdapter<String> adp = new ArrayAdapter<>(this,
 				android.R.layout.simple_list_item_1, dsTruyen);
 		lvDsTruyen.setAdapter(adp);
+		lvDsTruyen.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 
 	@Override
