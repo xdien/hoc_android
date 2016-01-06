@@ -40,6 +40,7 @@ public class SinhVienHelper extends SQLiteOpenHelper{
 		values.put(SINHVIEN_DC, sv.getDiaChi());
 		db.insert(TABLE_NAME, null, values);
 	}
+	
 	public int xoa(int id){
 		SQLiteDatabase db = getWritableDatabase();
 		return db.delete(TABLE_NAME, "id = " + id, null);
@@ -53,5 +54,14 @@ public class SinhVienHelper extends SQLiteOpenHelper{
 			dsSinhVien.add(new O_SinhVien(cu.getInt(0), cu.getString(1), cu.getString(2)));
 		}
 		return dsSinhVien;
+	}
+	//Ham lay sinh vien theo id
+	public O_SinhVien laySinhVien(int id){
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cu = db.rawQuery("select * from " +TABLE_NAME + "where id="+id, null);
+		if(cu.moveToNext()){
+			return new O_SinhVien(cu.getInt(0), cu.getString(1), cu.getString(2));
+		}
+		return null;
 	}
 }
