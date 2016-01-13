@@ -16,6 +16,7 @@ public class SinhVienHelper extends SQLiteOpenHelper{
 	public static String SINHVIEN_ID = "id";
 	public static String SINHVIEN_NAME = "ten";
 	public static String SINHVIEN_DC = "dc";
+	String CREATE_TABLE_STRING = "CREATE  TABLE "+TABLE_NAME+" ("+SINHVIEN_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+SINHVIEN_NAME+" VARCHAR, "+SINHVIEN_DC+" TEXT)";
 
 	public SinhVienHelper(Context context, String name, int version) {
 		super(context, DATABASE_NAME, null, 1);
@@ -24,7 +25,6 @@ public class SinhVienHelper extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		//Tao bang mau
-		String CREATE_TABLE_STRING = "CREATE  TABLE "+TABLE_NAME+" ("+SINHVIEN_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+SINHVIEN_NAME+" VARCHAR, "+SINHVIEN_DC+" TEXT)";
 		db.execSQL(CREATE_TABLE_STRING);
 	}
 
